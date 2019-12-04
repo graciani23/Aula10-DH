@@ -1,10 +1,30 @@
 <?php
-    // Definir meu array associativo $pessoa1
-    $pessoa1 = [
-        "nome" => "João Lucas",
-        "idade" => 5,
-        "masculino" => true,
+    // Definindo um array de pessoas
+    $pessoas = [
+        [
+            "nome" => "João Lucas",
+            "idade" => 5,
+            "masculino" => true,
+        ],
+        [
+            "nome" => "Maria Lucia",
+            "idade" => 20,
+            "masculino" => false,
+        ],
+        [
+            "nome" => "Joana",
+            "idade" => 30,
+            "masculino" => false,
+        ],
     ];
+    //  $pos = 2;
+    //  $pessoa = $pessoas[$pos];
+    // echo('<pre>');
+    // mostra todas as informações do array
+    //var_dump($pessoa); // monstra detalhes das variáveis
+    //print_r($pessoa); //mais fácil para debugar e mostra o array de forma simplificada. No caso de boolean retorna true = 1 e false = a nada
+    // echo('<pre>');
+    // die(); // interrompe a execução do script nesse ponto
 ?>
 
 <!DOCTYPE html>
@@ -17,32 +37,29 @@
     <title>Document</title>
 </head>
 <body>
-<div class="pessoa">
-        <img src="./img/person.jpg" alt="<?= $pessoa1['nome']; ?>">
+    <?php foreach($pessoas as $pos=> $umaDasPessoas) { ?>
+        <div class="pessoa">
+        <img src="./img/foto<?=$pos?>.jpg" alt="<?= $pessoa['nome']; ?>">
         <div class="dados">
             <div class="info">
                 <span>Nome:</span>
-                <div><?= $pessoa1['nome']; ?></div>
+                <div><?= $pessoa['nome']; ?></div>
             </div>
             <div class="info">
                 <span>Idade:</span>
-                <div><?= $pessoa1['idade']?></div>
+                <div><?= $pessoa['idade']?></div>
             </div>
             <div class="info">
                 <span>Sexo:</span>
                 <div>
                 <?php
-                // if ($pessoa1["feminino"]) {
-                //     echo ("Feminino");
-                // } else {
-                //     echo ("Masculino");
-                // }
-
-                echo ($pessoa1['masculino'] ? 'Masculino' : 'Feminino');
+                    echo ($pessoa['masculino'] ? 'Masculino' : 'Feminino');
                 ?>
                 </div>
             </div>
         </div>
     </div>
+    <?php } ?>
+    
 </body>
 </html>

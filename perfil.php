@@ -8,7 +8,7 @@
         ],
         [
             "nome" => "Maria Lucia",
-            "idade" => 45,
+            "idade" => 20,
             "masculino" => false,
         ],
         [
@@ -17,7 +17,7 @@
             "masculino" => false,
         ],
     ];
-     $pos = 0;
+     $pos = 2;
      $pessoa = $pessoas[$pos];
     // echo('<pre>');
     // mostra todas as informações do array
@@ -38,7 +38,7 @@
 </head>
 <body>
 <div class="pessoa">
-        <img src="./img/person.jpg" alt="<?= $pessoa['nome']; ?>">
+        <img src="./img/foto<?=$pos?>.jpg" alt="<?= $pessoa['nome']; ?>">
         <div class="dados">
             <div class="info">
                 <span>Nome:</span>
